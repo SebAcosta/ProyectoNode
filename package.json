@@ -7,6 +7,10 @@
     "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebAcosta/ProyectoNode"
+  },
   "keywords": [
     "api",
     "rest",
@@ -22,5 +26,9 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/SebAcosta/ProyectoNode/issues"
+  },
+  "homepage": "https://github.com/SebAcosta/ProyectoNode#readme"
 }
