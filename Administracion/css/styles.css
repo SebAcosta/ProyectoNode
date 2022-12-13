@@ -65,7 +65,8 @@ input[type=email],input[type=password] {
 }
 
 input[type=button]{
-    background-color: #F36E41;
+    background-color: #F36E41;   
+     transition: background-color .2s;
     border: none;
     color: #25262E;
     font-family: 'Nunito', sans-serif;

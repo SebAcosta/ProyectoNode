@@ -4,6 +4,23 @@ body, html {
     background-color: #1A282B;
 }
 
+/* width */
+::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:#55696d; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#1B1B1D; 
+  }
+
+
 .header{
     background-color: #F36E41;
     padding-left: 30px;
@@ -31,6 +48,7 @@ body, html {
 .lupa{
     vertical-align:middle;
     display: inline-block;
+    cursor: pointer;
     margin-top: 8px;
 }
 
@@ -97,7 +115,8 @@ input[type=text]:focus{
 }
 
 .mBoton{
-    background-color: #F36E41;
+    background-color: #F36E41;    
+    transition: background-color .1s;
     height: 50px;
     padding-left: 20px;
     width: 320px;
@@ -137,6 +156,8 @@ input[type=text]:focus{
     background-color: rgba(208, 208, 208, 0.04);
     margin-top: -20px;
     white-space: nowrap;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 .tabla{
@@ -197,6 +218,8 @@ input[type=text]:focus{
     font-weight: 300;
     font-size: 14px;
     color:white;
+    overflow: auto;
+    overflow-y: hidden;
 }
 .tel{
     display: inline-block;
@@ -221,6 +244,8 @@ input[type=text]:focus{
     color:white;
     font-size: 14px;
     margin-left: 40px;
+    overflow: auto;
+    overflow-y: hidden;
 }
 .direccion{
     display: inline-block;
@@ -233,6 +258,8 @@ input[type=text]:focus{
     font-size: 14px;
     color:white;
     margin-left: 10px;
+    overflow: auto;
+    overflow-y: hidden;
 }
 .imagen{
     display: inline-block;

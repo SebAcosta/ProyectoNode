@@ -10,6 +10,8 @@ function init(){
             }
         }
         loadEmpleados()
+        document.querySelector('.lupa').addEventListener('click',search)
+        document.querySelector('.mBoton').addEventListener('click',agregar)
     }else{
         window.location.href="index.html"
     }
@@ -63,6 +65,7 @@ function displayEmpleados(emp){
                                         src="./images/editar.png"
                                         height="20"
                                         width="20"
+                                        onclick="window.location.href='edit.html?id=${emp[i].id}'"
                                     />
                                 </div>
                                 <div class="imagen">
@@ -70,8 +73,37 @@ function displayEmpleados(emp){
                                         src="./images/eliminar.png"
                                         height="20"
                                         width="20"
+                                        onclick="window.location.href='delete.html?id=${emp[i].id}'"
                                     />
                                 </div>
                             </div>`
     }
+}
+
+function search(){
+    var nombre = document.getElementById('nombre').value
+    if(nombre.length>0){
+        axios.get(url+"/empleados/"+nombre,headers)
+        .then(function(res){
+            var datos = document.getElementById("datos")
+            datos.innerHTML = ''
+            displayEmpleados(res.data.message)
+        }).catch(function(err){
+            alert("Usuario no encontrado :(")
+        })
+    }else{
+        axios.get(url+"/empleados",headers)
+        .then(function(res){
+            console.log(res)
+            var datos = document.getElementById("datos")
+            datos.innerHTML = ''
+            displayEmpleados(res.data.message)
+        }).catch(function(err){
+            console.log(err)
+        })
+    }
+}
+
+function agregar(){
+    window.location.href="add.html"
 }
