@@ -1,3 +1,3 @@
 module.exports= (req, res, next) => {
-    window.location.href="index.html"
+    return res.status(200).json({code:200,message:"Bienvenido al Proyecto"})
 }
