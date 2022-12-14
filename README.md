@@ -19,6 +19,10 @@ System that allows employees administration to users registered in the DB. When 
 * Nodemon
 
 ## Installation
+### Database
+In case the azure DB doesn't work, you can use the sql file to create your own local DB; add a new DB named "empleados" and import the SQL file. Inside config folder, modify database to connect to your new DB. If you're using XAMPP don't forget to start Apache and MySQL
+
+### Application
 First you'll need to install dependencies, open the directory on your console and run
   ```sh
   npm i
