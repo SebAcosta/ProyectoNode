@@ -1,6 +1,6 @@
 window.onload = init;
 var headers = {}
-var url = "http://localhost:3000"
+const API_URL = 'http://localhost:3000';
 
 function init(){
     if(sessionStorage.getItem("token")){
@@ -35,7 +35,7 @@ function init(){
 }
 
 function loadEmpleados(){
-    axios.get(url+"/empleados",headers)
+    axios.get(API_URL+"/empleados",headers)
     .then(function(res){
         console.log(res)
         displayEmpleados(res.data.message)
@@ -83,7 +83,7 @@ function displayEmpleados(emp){
 function search(){
     var nombre = document.getElementById('nombre').value
     if(nombre.length>0){
-        axios.get(url+"/empleados/"+nombre,headers)
+        axios.get(API_URL+"/empleados/"+nombre,headers)
         .then(function(res){
             var datos = document.getElementById("datos")
             datos.innerHTML = ''
@@ -92,7 +92,7 @@ function search(){
             alert("Usuario no encontrado :(")
         })
     }else{
-        axios.get(url+"/empleados",headers)
+        axios.get(API_URL+"/empleados",headers)
         .then(function(res){
             console.log(res)
             var datos = document.getElementById("datos")

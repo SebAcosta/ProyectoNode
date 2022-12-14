@@ -1,4 +1,5 @@
 window.onload = init;
+const API_URL = 'http://localhost:3000';
 
 function init(){
     if(!sessionStorage.getItem("token")){
@@ -14,7 +15,7 @@ function login(){
 
     axios({
         method:'post',
-        url:'http://localhost:3000/user/login',
+        url:API_URL+'/user/login',
         data:{
             correo: mail,
             pass: pass

@@ -1,7 +1,7 @@
 window.onload = init;
 var headers = {}
 let id = 0
-var url = "http://localhost:3000"
+const API_URL = 'http://localhost:3000';
 
 function init(){
     if(sessionStorage.getItem("token")){
@@ -27,7 +27,7 @@ function regresar(){
 function borrar(){
     axios({
         method:'DELETE',
-        url:'http://localhost:3000/empleados/'+id,
+        url:API_URL+'/empleados/'+id,
         headers:headers.headers,
         data:{
         }
@@ -41,7 +41,7 @@ function borrar(){
 }
 
 function loadDatos(){
-    axios.get(url+"/empleados/"+id,headers)
+    axios.get(API_URL+"/empleados/"+id,headers)
     .then(function(res){
         console.log(res)
         displayDatos(res.data.message)

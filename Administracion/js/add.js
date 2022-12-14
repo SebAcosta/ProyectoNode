@@ -1,5 +1,6 @@
 window.onload = init;
 var headers = {}
+const API_URL = 'http://localhost:3000';
 
 function init(){
     if(sessionStorage.getItem("token")){
@@ -28,7 +29,7 @@ function registrar(){
 
     axios({
         method:'post',
-        url:'http://localhost:3000/empleados',
+        url:API_URL+'/empleados',
         headers:headers.headers,
         data:{
             nombres:nombres,
