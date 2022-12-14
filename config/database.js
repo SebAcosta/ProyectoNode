@@ -9,19 +9,13 @@ const pool = mysql.createPool({
     database:'empleados'
 });
 
-pool.connect(error=>{
-    if(error){
-        pool = mysql.createPool({
-            connectionLimit : 5,
-            host:'localhost',
-            user:'root',
-            password:'',
-            database:'empleados'
-        });
-    }else{
-        console.log("Conectado a BD api")
-    }
-})
+// const pool = mysql.createPool({
+//     connectionLimit : 5,
+//     host:'localhost',
+//     user:'root',
+//     password:'',
+//     database:'empleados'
+// });
 
 pool.query = util.promisify(pool.query)
 module.exports = pool;
