@@ -1,9 +1,10 @@
 const express = require('express')
 const morgan = require('morgan')
+const path = require('path');
 //ROUTERS
 const app = express();
 const empleados = require('./routes/empleados')
-const user = require('./routes/user')
+const user = require(path.resolve(__dirname,'./routes/user'))
 //MIDDLEWARE
 const auth = require('./middleware/auth')
 const notFound = require('./middleware/notFound')

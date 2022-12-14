@@ -8,13 +8,20 @@ const pool = mysql.createPool({
     password:'TallerNode1',
     database:'empleados'
 });
-// const pool = mysql.createPool({
-//     connectionLimit : 5,
-//     host:'localhost',
-//     user:'root',
-//     password:'',
-//     database:'empleados'
-// });
+
+pool.connect(error=>{
+    if(error){
+        pool = mysql.createPool({
+            connectionLimit : 5,
+            host:'localhost',
+            user:'root',
+            password:'',
+            database:'empleados'
+        });
+    }else{
+        console.log("Conectado a BD api")
+    }
+})
 
 pool.query = util.promisify(pool.query)
 module.exports = pool;
