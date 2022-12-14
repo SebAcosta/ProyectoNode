@@ -3,9 +3,9 @@ const util = require('util')
 
 const pool = mysql.createPool({
     connectionLimit:10,
-    host:'localhost',
-    user:'root',
-    password:'',
+    host:'node-server.mysql.database.azure.com',
+    user:'myadmin',
+    password:'TallerNode1',
     database:'empleados'
 });
 
