@@ -6,7 +6,7 @@ const pool = mysql.createPool({
     host:'nodedb.mysql.database.azure.com',
     user:'myadmin',
     password:'TallerNode1',
-    database:'empleados'
+    database:'empelados'
 });
 
 // const pool = mysql.createPool({
